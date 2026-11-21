@@ -1,0 +1,11 @@
+Madan: You will execute the following section of the code directly from AzureCli to execute a deployment programatically. 
+See here we are deploying an IaC. Here the deployment will be done in a default resource group and so that is why --name is not mentioned fro
+the resource group. Also, this deployment uses a code file azure-deploy.json. We can update this file to deploy various resources in
+Azure. We can update or edit or delete the resources in this azure-deploy.json file to programaticall deploy the resources in Azure.
+Basically, this is a method of deploying Azure reosources using ARM template file.
+
+templateFile="azuredeploy.json"
+today=$(date +"%d-%b-%Y")
+DeploymentName="blanktemplate-"$today
+
+az deployment group create --name $DeploymentName --template-file $templateFile
